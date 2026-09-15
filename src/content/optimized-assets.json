@@ -1,0 +1,158 @@
+{
+  "101kruiden.svg": {
+    "src": "/assets/101kruiden.svg",
+    "width": 232,
+    "height": 50
+  },
+  "carrier-broker-mockup.svg": {
+    "src": "/assets/carrier-broker-mockup.svg.webp",
+    "width": 1429,
+    "height": 1006,
+    "srcSet": "/assets/carrier-broker-mockup.svg.small.webp 640w, /assets/carrier-broker-mockup.svg.webp 1429w"
+  },
+  "ccv-shop-logo.svg": {
+    "src": "/assets/ccv-shop-logo.svg",
+    "width": 220,
+    "height": 151
+  },
+  "db-schenker-logo.svg": {
+    "src": "/assets/db-schenker-logo.svg",
+    "width": 114,
+    "height": 78
+  },
+  "exact-logo.svg": {
+    "src": "/assets/exact-logo.svg",
+    "width": 132,
+    "height": 132
+  },
+  "hero-amazon.svg": {
+    "src": "/assets/hero-amazon.svg",
+    "width": 56,
+    "height": 58
+  },
+  "hero-bol.svg": {
+    "src": "/assets/hero-bol.svg",
+    "width": 480,
+    "height": 300
+  },
+  "hero-bpost.svg": {
+    "src": "/assets/hero-bpost.svg.webp",
+    "width": 138,
+    "height": 77
+  },
+  "hero-correos.svg": {
+    "src": "/assets/hero-correos.svg.webp",
+    "width": 95,
+    "height": 74
+  },
+  "hero-dhl.svg": {
+    "src": "/assets/hero-dhl.svg",
+    "width": 104,
+    "height": 73
+  },
+  "hero-dpd.svg": {
+    "src": "/assets/hero-dpd.svg",
+    "width": 84,
+    "height": 94
+  },
+  "hero-fedex.svg": {
+    "src": "/assets/hero-fedex.svg.webp",
+    "width": 78,
+    "height": 78
+  },
+  "hero-gls.svg": {
+    "src": "/assets/hero-gls.svg",
+    "width": 135,
+    "height": 48
+  },
+  "hero-magento.svg": {
+    "src": "/assets/hero-magento.svg",
+    "width": 90,
+    "height": 90
+  },
+  "hero-postnl.svg": {
+    "src": "/assets/hero-postnl.svg",
+    "width": 125,
+    "height": 124
+  },
+  "hero-shopify.svg": {
+    "src": "/assets/hero-shopify.svg.webp",
+    "width": 79,
+    "height": 90
+  },
+  "hero-temu.svg": {
+    "src": "/assets/hero-temu.svg",
+    "width": 47,
+    "height": 47
+  },
+  "hero-ups.svg": {
+    "src": "/assets/hero-ups.svg.webp",
+    "width": 82,
+    "height": 94
+  },
+  "hero-woo.svg": {
+    "src": "/assets/hero-woo.svg.webp",
+    "width": 115,
+    "height": 69
+  },
+  "image-142.png": {
+    "src": "/assets/image-142.png",
+    "width": 226,
+    "height": 57
+  },
+  "image-149.png": {
+    "src": "/assets/image-149.png",
+    "width": 200,
+    "height": 86
+  },
+  "image-150.png": {
+    "src": "/assets/image-150.png",
+    "width": 175,
+    "height": 54
+  },
+  "integrations-mockup.svg": {
+    "src": "/assets/integrations-mockup.svg.webp",
+    "width": 1600,
+    "height": 1498,
+    "srcSet": "/assets/integrations-mockup.svg.small.webp 640w, /assets/integrations-mockup.svg.webp 1600w"
+  },
+  "shipping-zineps-b2b.svg": {
+    "src": "/assets/shipping-zineps-b2b.svg.webp",
+    "width": 1600,
+    "height": 1062,
+    "srcSet": "/assets/shipping-zineps-b2b.svg.small.webp 640w, /assets/shipping-zineps-b2b.svg.webp 1600w"
+  },
+  "shippng-zineps.svg": {
+    "src": "/assets/shippng-zineps.svg.webp",
+    "width": 1600,
+    "height": 1062,
+    "srcSet": "/assets/shippng-zineps.svg.small.webp 640w, /assets/shippng-zineps.svg.webp 1600w"
+  },
+  "snelstart-logo.svg": {
+    "src": "/assets/snelstart-logo.svg",
+    "width": 132,
+    "height": 132
+  },
+  "thetester.svg": {
+    "src": "/assets/thetester.svg",
+    "width": 225,
+    "height": 75
+  },
+  "zineps-dashboard.svg": {
+    "src": "/assets/zineps-dashboard.svg.webp",
+    "width": 1429,
+    "height": 982,
+    "srcSet": "/assets/zineps-dashboard.svg.small.webp 640w, /assets/zineps-dashboard.svg.webp 1429w"
+  },
+  "zineps-logo-black.svg": {
+    "src": "/assets/zineps-logo-black.svg",
+    "width": 173,
+    "height": 43
+  },
+  "zineps-partnerpanel.svg": {
+    "src": "/assets/zineps-partnerpanel.svg.webp",
+    "width": 1600,
+    "height": 1062,
+    "srcSet": "/assets/zineps-partnerpanel.svg.small.webp 640w, /assets/zineps-partnerpanel.svg.webp 1600w"
+  }
+}
