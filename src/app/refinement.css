@@ -73,8 +73,8 @@
 .explorer-options button[aria-pressed=true] i { opacity:1; }
 .explorer-connection { border-left:1px solid #dce5d6;padding:36px;display:flex;flex-direction:column;justify-content:center;background:radial-gradient(ellipse at 70% 20%,#e6efdc,transparent 70%); }
 .connection-diagram { display:flex;align-items:center;margin-bottom:34px; }
-.connection-diagram>div { width:112px;height:68px;display:grid;place-items:center;background:#fff;border:1px solid #d5e1ce;border-radius:10px;box-shadow:0 8px 14px #30442b0a; }
-.connection-diagram img { object-fit:contain;max-width:90%; }
+.connection-diagram>div { width:112px;height:68px;display:grid;place-items:center;overflow:hidden;background:#fff;border:1px solid #d5e1ce;border-radius:10px;box-shadow:0 8px 14px #30442b0a; }
+.connection-diagram img { display:block;width:auto;max-width:82%;height:auto;max-height:44px;object-fit:contain; }
 .connection-wire { height:1px;background:#a9c5a1;flex:1;position:relative;min-width:30px;overflow:visible; }
 .connection-wire i { position:absolute;top:-3px;left:0;width:7px;height:7px;background:#427d51;border:2px solid #d7edcd;border-radius:50%;animation:connection-flow 2.8s linear infinite; }
 @keyframes connection-flow { 0% {left:0;opacity:0} 15% {opacity:1} 85% {opacity:1} 100% {left:100%;opacity:0} }
@@ -90,6 +90,18 @@
 #news .news-card { border-top:2px solid #759674; }
 #news .news-card h3 { font-weight:550;font-size:23px; }
 #get-started .final-banner { border-radius:22px;box-shadow:0 25px 55px -30px #173e2e66; }
+
+/* Give the coverage proof real structure without changing its content. */
+#why-zineps .global-stats { gap:16px;border:0;padding-block:12px 22px; }
+#why-zineps .global-stats>div { min-height:150px;padding:22px;border:1px solid #a5d1ba2e;border-radius:14px;background:#ffffff0b;box-shadow:inset 0 1px #ffffff12;transition:transform 220ms var(--ease-out),background-color 220ms ease,border-color 220ms ease; }
+#why-zineps .global-stats dt { color:#b9dacb;font-size:13px; }
+#why-zineps .global-stats dd { margin-top:24px; }
+#why-zineps .global-card .uptime { margin:0 0 22px;padding:22px 24px;border:1px solid #9ed2b82e;border-radius:14px;background:#081f1738; }
+#why-zineps .global-card>h4 { margin:0 0 8px;font-size:clamp(20px,2vw,28px);line-height:1.25; }
+#why-zineps .global-card>.caption { max-width:760px;font-size:15px;line-height:1.65;color:#cbe0d4; }
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  #why-zineps .global-stats>div:hover { transform:translateY(-4px);background:#ffffff12;border-color:#a5d1ba5c; }
+}
 @media(hover:hover) and (prefers-reduced-motion:no-preference) {
   .explorer-options button:hover { transform:translateY(-3px);border-color:#88ac7c; }
   .button svg { transition:transform 220ms ease; }.button:hover svg { transform:translateX(3px); }
