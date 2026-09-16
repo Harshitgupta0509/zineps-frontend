@@ -6,6 +6,7 @@ import { RouteField } from "../logistics-experience";
 import { GlobalScroll } from "../global-scroll";
 import { JourneyRoute } from "../journey-route";
 import { InteractiveCard } from "../interactive-card";
+import { IntegrationExplorer } from "../integration-explorer";
 export function PlatformBenefits() {
   return (
     <Section id="why-zineps" className="muted">
@@ -89,6 +90,7 @@ export function Integrations() {
   return (
     <Section id="integrations" className="mint">
       <Intro label={c.ecoEy} title={c.ecoH} description={c.ecoP} center />
+      <IntegrationExplorer />
       <div className="center-actions">
         <ButtonLink secondary href={`${site}/integrations`}>
           {c.ecoBtnT}

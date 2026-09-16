@@ -10,14 +10,13 @@ import {
 import { CountUp } from "../motion";
 import { ProductStage } from "../logistics-experience";
 import { ShippingModes } from "../shipping-modes";
-import { HeroShader } from "../hero-shader";
+import { ShipmentPreview } from "../shipment-preview";
 import { ParcelStory } from "../parcel-story";
 import { JourneyRoute } from "../journey-route";
 export function Hero() {
   return (
     <>
       <Section id="hero" className="hero">
-        <HeroShader />
         <div className="split hero-grid">
           <div className="hero-copy">
             <Eyebrow>{c.eyebrowLabel}</Eyebrow>
@@ -30,15 +29,9 @@ export function Hero() {
               </ButtonLink>
             </div>
           </div>
-          <ProductStage className="product-stage hero-network">
-            <ProductImage
-              file="zineps-dashboard.svg"
-              alt="Zineps dashboard with sidebar, open orders, status cards and order table"
-              priority
-              className="hero-dashboard"
-            />
-          </ProductStage>
+          <ShipmentPreview />
         </div>
+        <div className="hero-proof-strip"><span><i/> One connected shipping workflow</span><a href="#why-zineps">Discover the platform <span aria-hidden="true">↓</span></a><span>Dashboard + API</span></div>
       </Section>
       <section className="trust container" aria-label="Trusted by">
         <p className="eyebrow">Trusted by</p>

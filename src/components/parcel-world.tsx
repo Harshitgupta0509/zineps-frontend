@@ -71,7 +71,7 @@ function Parcel({ progress, reduced }: Pick<Props, "progress" | "reduced">) {
 }
 export default function ParcelWorld(props: Props) {
   return <Canvas shadows dpr={[1, 1.35]} frameloop={props.active && !props.reduced ? "always" : "demand"}
-    camera={{ position: [-4.8, 3.4, 8.4], fov: 42 }} gl={{ alpha: true, antialias: true, powerPreference: "low-power" }}>
+    camera={{ position: [-4.8, 3.4, 8.4], fov: 35 }} gl={{ alpha: true, antialias: true, powerPreference: "low-power" }}>
     <ambientLight intensity={1.6} color="#d9e7df" />
     <directionalLight position={[-3, 6, 4]} intensity={3.2} color="#fff0d8" castShadow shadow-mapSize={[1024, 1024]} shadow-bias={-.0004} />
     <directionalLight position={[4, 2, -3]} intensity={2.4} color="#8ce3c8" />
