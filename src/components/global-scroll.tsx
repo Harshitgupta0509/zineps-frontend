@@ -17,7 +17,7 @@ export function GlobalScroll(){
       if(context.conditions?.reduced){progress.current.value=1;return;}
       progress.current.value=0;
       const desktop=!!context.conditions?.desktop;
-      const timeline=gsap.timeline({defaults:{ease:"none"},scrollTrigger:{trigger:el.querySelector(".global-scroll-runway"),start:desktop?"top 80px":"top 75%",end:desktop?"bottom bottom":"bottom 35%",scrub:1,invalidateOnRefresh:true}});
+      const timeline=gsap.timeline({defaults:{ease:"none"},scrollTrigger:{trigger:el.querySelector(".global-scroll-runway"),start:desktop?"top 80px":"top 75%",end:desktop?"bottom bottom":"bottom 35%",scrub:1,invalidateOnRefresh:true,refreshPriority:-1}});
       timeline.to(progress.current,{value:1,duration:1},0);
       if(desktop){
         const cards=el.querySelectorAll(".network-fact");
@@ -31,8 +31,13 @@ export function GlobalScroll(){
     media.add("(max-width:1024px) and (prefers-reduced-motion:no-preference)",()=>{
       progress.current.value=0;
       gsap.to(progress.current,{value:1,ease:"none",scrollTrigger:{trigger:root.current!.querySelector(".global-scroll-runway"),start:"top 85%",end:"bottom 55%",scrub:1,invalidateOnRefresh:true}});
+      root.current!.querySelectorAll(".network-fact").forEach((card,i)=>{
+        gsap.fromTo(card,{x:i%2?18:-18,y:28,scale:.86,opacity:.65},{x:0,y:0,scale:1,opacity:1,ease:"none",scrollTrigger:{trigger:card.parentElement,start:"top 95%",end:"top 55%",scrub:.7,invalidateOnRefresh:true,refreshPriority:-1}});
+      });
     });
-    return()=>media.revert();
+    // Measure after upstream pinned sections have created their scroll spacers.
+    const refreshFrame=requestAnimationFrame(()=>ScrollTrigger.refresh());
+    return()=>{cancelAnimationFrame(refreshFrame);media.revert();};
   },[]);
   return <section ref={root} id="global-scale" className="section dark globe-section global-scroll-section">
     <div className="container global-scroll-intro">
