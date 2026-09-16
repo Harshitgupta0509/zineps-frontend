@@ -94,8 +94,9 @@
 /* Give the coverage proof real structure without changing its content. */
 #why-zineps .global-stats { gap:16px;border:0;padding-block:12px 22px; }
 #why-zineps .global-stats>div { min-height:150px;padding:22px;border:1px solid #a5d1ba2e;border-radius:14px;background:#ffffff0b;box-shadow:inset 0 1px #ffffff12;transition:transform 220ms var(--ease-out),background-color 220ms ease,border-color 220ms ease; }
-#why-zineps .global-stats dt { color:#b9dacb;font-size:13px; }
-#why-zineps .global-stats dd { margin-top:24px; }
+#why-zineps .global-stats dt { color:#d2eadf;font-size:16px;font-weight:650; }
+#why-zineps .global-stats dd { margin-top:24px;font-size:clamp(28px,2.6vw,40px);font-weight:750; }
+#why-zineps .global-stats dd span { font-size:16px;font-weight:700;color:#e5f3eb; }
 #why-zineps .global-card .uptime { margin:0 0 22px;padding:22px 24px;border:1px solid #9ed2b82e;border-radius:14px;background:#081f1738; }
 #why-zineps .global-card>h4 { margin:0 0 8px;font-size:clamp(20px,2vw,28px);line-height:1.25; }
 #why-zineps .global-card>.caption { max-width:760px;font-size:15px;line-height:1.65;color:#cbe0d4; }
