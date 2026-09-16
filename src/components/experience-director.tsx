@@ -10,10 +10,10 @@ export function ExperienceDirector({ children }: { children: ReactNode }) {
     gsap.registerPlugin(ScrollTrigger);
     const media = gsap.matchMedia();
     media.add("(prefers-reduced-motion: no-preference)", () => {
-      const intro = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.1 } });
+      const intro = gsap.timeline({ defaults: { ease: "power4.out", duration: 1.35 } });
       intro.from(".hero h1", { clipPath:"inset(0 0 14% 0)",y: 18, opacity: .6 })
         .from(".hero-copy > .lead, .hero-copy > .actions", { y: 16, opacity: .35, stagger: .1 }, .15)
-        .from(".hero-network", { y: 46, rotateX: 7, transformPerspective: 1400, opacity: .5 }, .25);
+        .from(".hero-network", { y: 32, rotateX: 4, transformPerspective: 1600, transformOrigin:"50% 65%", opacity: .6, duration:1.55 }, .25);
       gsap.fromTo("#logistics-partners .partner-interface-main",{clipPath:"inset(0% 0% 8% 0% round 14px)"},{clipPath:"inset(0% 0% 0% 0% round 14px)",ease:"none",scrollTrigger:{trigger:"#logistics-partners",start:"top 85%",end:"top 30%",scrub:.5}});
     });
     const rails=document.querySelectorAll<HTMLElement>(".customer-marquee,.logo-marquee");

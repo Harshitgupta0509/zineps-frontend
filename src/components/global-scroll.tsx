@@ -17,12 +17,12 @@ export function GlobalScroll(){
       if(context.conditions?.reduced){progress.current.value=1;return;}
       progress.current.value=0;
       const desktop=!!context.conditions?.desktop;
-      const timeline=gsap.timeline({defaults:{ease:"none"},scrollTrigger:{trigger:el.querySelector(".global-scroll-runway"),start:desktop?"top 80px":"top 75%",end:desktop?"bottom bottom":"bottom 35%",scrub:1,invalidateOnRefresh:true,refreshPriority:-1}});
+      const timeline=gsap.timeline({defaults:{ease:"none"},scrollTrigger:{trigger:el.querySelector(".global-scroll-runway"),start:desktop?"top 80px":"top 75%",end:desktop?"bottom bottom":"bottom 35%",scrub:1.6,invalidateOnRefresh:true,refreshPriority:-1}});
       timeline.to(progress.current,{value:1,duration:1},0);
       if(desktop){
         const cards=el.querySelectorAll(".network-fact");
         const poses=[[-65,-42,-7],[60,-25,6],[-48,62,5],[54,72,-5]];
-        cards.forEach((card,i)=>timeline.fromTo(card,{x:poses[i][0],y:poses[i][1],rotation:0,scale:.62,opacity:.8},{x:0,y:0,rotation:0,scale:1,opacity:1,duration:.72},i*.05));
+        cards.forEach((card,i)=>timeline.fromTo(card,{x:poses[i][0],y:poses[i][1],rotation:0,scale:.72,opacity:.72},{x:0,y:0,rotation:0,scale:1,opacity:1,duration:.88,ease:"power2.inOut"},i*.035));
         timeline.fromTo(el.querySelector(".network-earth"),{scale:.94,y:24},{scale:1,y:0,duration:1},0);
         timeline.fromTo(el.querySelector(".network-atmosphere"),{opacity:.4,y:36},{opacity:.8,y:-20,duration:1},0);
       }
