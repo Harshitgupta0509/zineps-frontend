@@ -16,7 +16,6 @@ function Dropdown({
     <details className="nav-dropdown">
       <summary>
         {name}
-        <span aria-hidden="true">⌄</span>
       </summary>
       <div className="dropdown-panel">
         {items.map(([label, url]) => (
@@ -96,9 +95,9 @@ export function Navigation() {
           </div>
           <div className="nav-actions">
             <details className="nav-dropdown language">
-              <summary>
+              <summary aria-label="Select language, current language English">
                 <span lang="en">EN</span>
-                <span aria-hidden="true">⌄</span>
+                <svg className="language-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </summary>
               <div className="dropdown-panel">
                 <a href="/" lang="en" aria-current="page">

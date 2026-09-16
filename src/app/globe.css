@@ -1,0 +1,58 @@
+/* The only 3D environment: the existing global logistics section. */
+.globe-section {
+  --globe-land:#85afa0;
+  position:relative;
+  isolation:isolate;
+  background:radial-gradient(ellipse at 78% 43%,color-mix(in srgb,var(--mint) 12%,var(--dark)),var(--dark) 65%);
+  border-radius:64px 64px 0 0;
+  box-shadow:0 -32px 65px -42px color-mix(in srgb,var(--mint) 35%,transparent);
+}
+.globe-section::after { content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:linear-gradient(transparent 88%,#ffffff08); }
+.globe-section .global-composition { grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:38px 24px; }
+.global-copy { min-width:0; }
+.globe-section .section-intro { margin-bottom:0; }
+.globe-section .section-intro .lead { font-size:16px;line-height:1.75;max-width:540px; }
+.coverage-facts { display:grid;grid-template-columns:1fr 1fr;gap:22px 18px;margin-top:34px; }
+.coverage-facts > div { border-left:1px solid color-mix(in srgb,var(--mint) 35%,transparent);padding-left:16px; }
+.coverage-facts dt { font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#c2d8cf; }
+.coverage-facts dd { font-size:clamp(15px,1.5vw,20px);font-weight:500;color:#f7f9f8;letter-spacing:-.025em;margin-top:4px; }
+.globe-section .scale-grid { grid-column:1 / -1;margin-top:8px; }
+.logistics-globe { position:relative;min-width:0;width:100%;aspect-ratio:1 / 1.08; }
+.globe-depth { position:absolute;inset:0; }
+.globe-canvas { position:absolute;inset:0;pointer-events:none;opacity:0;transform:scale(.97);transition:opacity 900ms var(--ease-out),transform 900ms var(--ease-out); }
+.is-ready .globe-canvas { opacity:1;transform:none; }
+.globe-fallback { position:absolute;inset:19% 17%;border-radius:50%;background:radial-gradient(circle at 35% 30%,color-mix(in srgb,var(--mint) 14%,var(--dark)),var(--dark) 72%);box-shadow:inset -15px -8px 40px #00000020,0 0 45px #70cab908; }
+.globe-card { position:absolute;max-width:220px;border:1px solid color-mix(in srgb,var(--mint) 22%,transparent);border-radius:var(--radius);padding:12px 16px;background:color-mix(in srgb,var(--dark) 82%,transparent);backdrop-filter:blur(8px);box-shadow:0 12px 28px #00000012;color:#f7f9f8;pointer-events:none;font-size:14px;opacity:1; }
+.globe-card-label { display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#c2d8cf; }
+.globe-card strong { font-size:14px;display:block;margin-top:5px;font-weight:500;letter-spacing:-.02em; }
+.globe-control { top:17%;left:1%;display:flex;gap:10px;align-items:center; }
+.globe-control .globe-card-label { font-size:8px;margin-top:2px; }
+.globe-status { width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 5px #70cab910; }
+.globe-countries { right:0;top:39%; }
+.globe-carriers { bottom:15%;left:7%; }
+.is-ready .globe-card { animation:globe-card-in 600ms var(--ease-out) both;animation-delay:900ms; }
+.is-ready .globe-countries { animation-delay:960ms; }
+.is-ready .globe-carriers { animation-delay:1020ms; }
+.globe-caption { position:absolute;bottom:1%;left:0;width:100%;text-align:center;color:#b3c9bf;font-size:10px;letter-spacing:.025em; }
+@keyframes globe-card-in { from { opacity:0;transform:translateY(8px); } to { opacity:1;transform:none; } }
+@media (max-width:959px) {
+  .globe-section .global-composition { grid-template-columns:1fr; }
+  .logistics-globe { max-width:570px;margin:auto; }
+  .global-copy { max-width:680px; }
+  .globe-section { border-radius:36px 36px 0 0; }
+}
+@media (max-width:639px) {
+  .globe-section .global-composition { gap:26px; }
+  .logistics-globe { aspect-ratio:1 / 1.12;grid-row:3; }
+  .globe-section .scale-grid { grid-row:2; }
+  .globe-card { padding:9px 11px;backdrop-filter:none; }
+  .globe-card strong { font-size:12px; }
+  .globe-control { left:0;top:10%; }
+  .globe-countries { top:auto;bottom:13%;right:0; }
+  .globe-carriers { display:none; }
+  .coverage-facts dd { font-size:15px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .globe-canvas { transition:opacity 200ms ease;transform:none; }
+  .is-ready .globe-card { animation:none; }
+}

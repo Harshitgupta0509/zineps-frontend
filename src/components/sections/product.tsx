@@ -8,17 +8,20 @@ import {
   Bullets,
 } from "../ui";
 import { CountUp } from "../motion";
-import { BackgroundBeams } from "@/components/ui/background-beams";
-import MovingLine from "@/components/ui/moving-line";
+import { ProductStage } from "../logistics-experience";
+import { ShippingModes } from "../shipping-modes";
+import { HeroShader } from "../hero-shader";
+import { ParcelStory } from "../parcel-story";
+import { JourneyRoute } from "../journey-route";
 export function Hero() {
   return (
     <>
       <Section id="hero" className="hero">
-        <BackgroundBeams className="hero-beams" />
+        <HeroShader />
         <div className="split hero-grid">
           <div className="hero-copy">
             <Eyebrow>{c.eyebrowLabel}</Eyebrow>
-            <h1>{c.headline}</h1>
+            <h1><span className="hero-opening">{c.headline.split("global logistics")[0]}</span><span className="headline-emphasis">global logistics</span></h1>
             <p className="lead">{c.description}</p>
             <div className="actions">
               <ButtonLink href={register}>{c.primaryCtaLabel}</ButtonLink>
@@ -27,29 +30,24 @@ export function Hero() {
               </ButtonLink>
             </div>
           </div>
-          <div className="product-stage" data-future-visual="logistics-network">
+          <ProductStage className="product-stage hero-network">
             <ProductImage
               file="zineps-dashboard.svg"
               alt="Zineps dashboard with sidebar, open orders, status cards and order table"
               priority
               className="hero-dashboard"
             />
-          </div>
+          </ProductStage>
         </div>
       </Section>
       <section className="trust container" aria-label="Trusted by">
         <p className="eyebrow">Trusted by</p>
-        <div className="customer-logos">
-          {customers.map(([name, file]) => (
-            <img
-              key={name}
-              src={`/assets/${file}`}
-              alt={name}
-              width="140"
-              height="48"
-              loading="lazy"
-            />
-          ))}
+        <div className="customer-marquee">
+          <div className="customer-marquee-track">
+            {[false,true].map(duplicate=><div className="customer-logos" aria-hidden={duplicate||undefined} key={String(duplicate)}>
+              {customers.map(([name,file])=><img key={name} src={`/assets/${file}`} alt={duplicate?"":name} width="140" height="48" loading="lazy"/>)}
+            </div>)}
+          </div>
         </div>
       </section>
     </>
@@ -71,10 +69,10 @@ export function PartnerRates() {
           </div>
         </div>
         <div>
-          <ProductImage
+          <ProductStage className="rates-stage"><ProductImage
             file="carrier-broker-mockup.svg"
             alt="Zineps shipping partner rates dashboard"
-          />
+          /></ProductStage>
           <dl className="rate-stats">
             {[
               { value: "+20", target: 20, label: c.statPartnersL },
@@ -97,7 +95,7 @@ export function PartnerRates() {
 export function ShippingSolutions() {
   return (
     <Section id="shipping">
-      <div className="solution-grid">
+      <ShippingModes labels={[c.commerceEy, c.b2bEy]}>
         {[
           {
             prefix: "commerce",
@@ -133,32 +131,21 @@ export function ShippingSolutions() {
             <p className="caption">{c[`${item.prefix}Ideal`]}</p>
           </article>
         ))}
-      </div>
+      </ShippingModes>
     </Section>
   );
 }
 export function ShippingAI() {
   return (
     <Section id="shipping-ai" className="dark">
-      <div className="split">
+      <ParcelStory>
         <div className="section-copy">
           <Intro label={c.aiEy} title={c.aiH} description={c.aiP} />
           <ButtonLink href={`${site}/ai-shipping-intelligence`}>
             {c.aiBtnT}
           </ButtonLink>
         </div>
-        <div
-          className="network-space"
-          data-future-visual="shipping-routes"
-          aria-hidden="true"
-        >
-          <span>Merchant</span>
-          <i><MovingLine /></i>
-          <span className="network-hub">Zineps</span>
-          <i><MovingLine delay={1.6} /></i>
-          <span>Carrier</span>
-        </div>
-      </div>
+      </ParcelStory>
     </Section>
   );
 }
@@ -166,10 +153,11 @@ export function LogisticsPartners() {
   return (
     <Section id="logistics-partners">
       <div className="split partner-grid">
-        <ProductImage
+        <div className="partner-journey"><ProductStage className="partner-stage"><ProductImage
           file="zineps-partnerpanel.svg"
-          alt="The real Zineps Partner Panel for logistics providers"
-        />
+            alt="The real Zineps Partner Panel for logistics providers"
+            className="partner-interface-main"
+        /></ProductStage><JourneyRoute /></div>
         <div className="section-copy">
           <Intro
             label={c.partnerEy}

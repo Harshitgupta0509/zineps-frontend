@@ -1,0 +1,97 @@
+/* Zineps: digital order → loading → departure → global mesh. */
+body { font-size:17px;line-height:1.7;color:#43534c; }
+h1,h2 { font-weight:650; }
+h3,h4 { font-weight:600; }
+.lead { font-size:clamp(17px,1.4vw,19px);line-height:1.7; }
+.eyebrow { font-size:12px;font-weight:650;letter-spacing:.12em; }
+.caption { font-size:14px; }
+.hero h1 { font-size:clamp(42px,4.8vw,74px);line-height:1.025;letter-spacing:-.055em; }
+.headline-emphasis { display:block;font-size:1.08em;color:var(--dark);font-weight:720; }
+.hero-copy .lead { max-width:540px;margin-top:28px; }
+.hero-network { padding:54px 12px;overflow:visible; }
+.hero-grid { gap:44px; }
+.hero-network .experience-product { position:relative;z-index:2; }
+.hero-network .experience-product::after { content:"";position:absolute;inset:10px -10px -14px 14px;z-index:-1;border:1px solid #70cab93b;border-radius:15px;background:#e3f3ec91;transform:rotate(2deg); }
+.hero-network .product-image { padding:10px;box-shadow:0 40px 90px #1e332e26,0 1px 0 white inset; }
+.product-atmosphere { position:absolute;inset:0;pointer-events:none;overflow:hidden; }
+.product-atmosphere i { position:absolute;inset:8% 10%;border-radius:38%;background:radial-gradient(ellipse,#70cab936,transparent 68%); }
+.product-atmosphere i:nth-child(2) { inset:50% 0 0 40%;background:linear-gradient(130deg,#b9d5c31f,#70cab92a);border-radius:16px;transform:rotate(-16deg); }
+.product-signal { position:absolute;left:9%;top:50%;width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 7px #70cab914,0 0 22px #70cab95c; }
+.stage-orbit { display:none; }
+#partner-rates { background:radial-gradient(ellipse at 75% 35%,#cde8dd 0,transparent 65%),#f0f8f4; }
+.rates-stage .experience-product { border-radius:16px; }
+.rate-stats dd { font-size:clamp(36px,4vw,58px);font-weight:650;letter-spacing:-.055em; }
+.bento .hub-card { background:radial-gradient(ellipse at 90% 10%,#ddf0e5,transparent 62%),#fff;perspective:1000px;transition:transform 250ms var(--ease-out),box-shadow 250ms ease; }
+.hub-card .dashboard-crop { transition:transform 250ms var(--ease-out); }
+.analytics-card { position:relative;background:radial-gradient(ellipse at 20% 0,#70cab91a,transparent 62%),#fff;transition:border-color 200ms ease,box-shadow 200ms ease; }
+.analytics-card .chart { transition:transform 250ms var(--ease-out); }
+.benefit h3 { font-size:clamp(24px,2.2vw,32px);line-height:1.14;letter-spacing:-.035em; }
+.benefit p { font-size:16px; }
+/* A single sticky scene uses the viewport for the story, not empty canvas padding. */
+#shipping-ai { overflow:visible;position:relative;padding-block:56px;background:radial-gradient(ellipse at 80% 35%,#335948,var(--dark) 68%); }
+.shipment-scroll { position:relative;height:230vh;min-height:1450px; }
+.shipment-sticky { position:sticky;top:28px;min-height:650px;height:calc(100vh - 56px);max-height:1000px;display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:24px;align-items:center; }
+.shipment-editorial { position:relative;z-index:3;padding-block:30px; }
+.shipment-editorial h2 { font-size:clamp(38px,4.3vw,66px);line-height:1.05;letter-spacing:-.05em; }
+.shipment-editorial .lead { font-size:17px;line-height:1.75; }
+.loading-world { position:relative;isolation:isolate;width:100%;height:100%;min-height:540px;max-height:780px;overflow:hidden;border-radius:28px;background:radial-gradient(ellipse at 50% 30%,#70cab92b,transparent 68%),#213d32;border:1px solid #70cab922;box-shadow:0 30px 80px #10281f44; }
+.warehouse-light { position:absolute;inset:-10%;background:radial-gradient(ellipse at 35% 18%,#b7dfbb25,transparent 55%); }
+.warehouse-floor { position:absolute;inset:65% -40% -40%;background:repeating-linear-gradient(90deg,transparent 0 70px,#70cab90c 71px 72px);transform:perspective(350px) rotateX(50deg); }
+.loading-canvas { position:absolute;inset:0;z-index:2;pointer-events:none; }
+.loading-interface { position:absolute;z-index:3;left:5%;top:7%;width:82%;padding:8px;border-radius:13px;background:#f0f6eee8;box-shadow:0 30px 65px #081f1755;border:1px solid #c1e6d587;pointer-events:none; }
+.loading-interface img { display:block;width:100%;height:auto;max-height:380px;object-fit:contain; }
+.shipment-chapters { position:absolute;z-index:5;left:7%;right:7%;bottom:6%;height:24px;color:#c5e5d8;font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:600; }
+.shipment-chapters span { position:absolute;inset:0; }
+.departure-route { position:absolute;z-index:4;inset:0;width:100%;height:100%;pointer-events:none;filter:drop-shadow(0 0 5px #70cab947); }
+.truck-fallback { position:absolute;left:15%;right:15%;top:52%;height:130px; }
+.fallback-cargo { position:absolute;left:0;width:68%;height:90px;background:#e6ece3;border-radius:6px 6px 0 0;border-bottom:10px solid var(--mint);padding:15px;color:var(--dark);font-weight:700; }
+.fallback-cab { position:absolute;left:70%;width:27%;top:25px;height:65px;background:#e6ece3;border-radius:10px 25px 0 0; }
+.fallback-cab::before { content:"";position:absolute;inset:6px 7px 30px;background:#42675a;border-radius:3px 15px 0 0; }
+.truck-fallback i { position:absolute;top:75px;left:12%;width:30px;height:30px;background:#24352d;border:6px solid #58685f;border-radius:50%; }
+.truck-fallback i:last-child { left:76%; }
+.loading-world:has(canvas) .truck-fallback { display:none; }
+/* The truck's mint lane reappears under the actual carrier interface, then at Earth. */
+.partner-stage::after { background:linear-gradient(150deg,#e5f0e9,#f5f8f5);border-color:#70cab93b; }
+.partner-stage::before { border-bottom:2px solid #70cab949;border-radius:0 0 50% 50%;inset:18% 0 5%; }
+.globe-section::before { content:"";position:absolute;right:17%;top:-72px;width:150px;height:130px;border-right:1px solid #70cab961;border-top:1px solid #70cab94d;border-radius:0 60px 0 0;pointer-events:none; }
+.globe-section .global-copy h2 { font-size:clamp(36px,4vw,62px);line-height:1.055;letter-spacing:-.05em; }
+.globe-section .scale-grid dd { font-weight:680;font-size:clamp(38px,4.5vw,66px);letter-spacing:-.05em; }
+.globe-control { border-color:#70cab96b;box-shadow:0 10px 40px #10281f66,0 0 25px #70cab915; }
+.globe-status { box-shadow:0 0 0 6px #70cab916,0 0 18px #70cab966; }
+.globe-carriers { display:block; }
+@media(hover:hover) and (pointer:fine) {
+  .bento .hub-card:hover { transform:perspective(1100px) rotateX(1.5deg) rotateY(-1.5deg);box-shadow:0 22px 45px #1e332e12; }
+  .hub-card:hover .dashboard-crop { transform:translate3d(12px,-5px,16px); }
+  .analytics-card:hover { border-color:#70cab9;box-shadow:inset 0 0 45px #70cab911,0 15px 35px #1e332e0b; }
+  .analytics-card:hover .chart { transform:translateY(-3px); }
+  .rates-stage:hover .product-image { border-color:#70cab9;box-shadow:0 28px 60px #1e332e1a; }
+}
+@media(max-width:959px) {
+  .shipment-sticky { grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:18px; }
+  .shipment-editorial h2 { font-size:38px; }
+  .loading-world { min-height:480px;max-height:640px; }
+  .loading-interface { top:12%;width:90%; }
+}
+@media(max-width:639px) {
+  body { font-size:16px; }
+  .hero h1 { font-size:clamp(40px,10.5vw,58px); }
+  .hero-network { overflow:hidden; }
+  .shipment-scroll { height:195vh;min-height:1200px; }
+  .shipment-sticky { top:0;display:flex;flex-direction:column;gap:0;height:100svh;min-height:620px;max-height:none;justify-content:center; }
+  .shipment-editorial { padding:18px 0;width:100%; }
+  .shipment-editorial h2 { font-size:32px; }
+  .shipment-editorial .section-intro { margin-bottom:16px; }
+  .shipment-editorial .lead { font-size:15px;line-height:1.55; }
+  .loading-world { height:48svh;min-height:280px;max-height:400px;flex:1; }
+  .loading-interface { width:68%;top:5%; }
+  .shipment-chapters { font-size:9px;bottom:5%; }
+  .globe-section::before { right:20%;height:80px;top:-45px; }
+  .globe-carriers { display:none; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .shipment-scroll { height:auto;min-height:0; }
+  .shipment-sticky { position:relative;top:0;height:auto;min-height:0; }
+  .loading-world { height:550px; }
+  .loading-interface { width:43%;top:4%; }
+  .hub-card:hover,.hub-card:hover .dashboard-crop,.analytics-card:hover .chart { transform:none !important; }
+}

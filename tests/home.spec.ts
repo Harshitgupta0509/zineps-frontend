@@ -11,13 +11,14 @@ for (const width of [390, 768, 1440]) {
       "The intelligent layer for global logistics",
     );
     await expect(page.locator("main>section")).toHaveCount(14);
-    await expect(page.locator(".logo-grid img")).toHaveCount(18);
+    await expect(page.locator('.logo-set:not([aria-hidden="true"]) img')).toHaveCount(18);
     await expect(page.locator(".faq-item")).toHaveCount(6);
     await expect(page.locator(".news-card")).toHaveCount(3);
+    const overflowing = await page.locator("body *").evaluateAll(elements => ({width:innerWidth,scroll:document.documentElement.scrollWidth,items:elements.filter(el => el.getBoundingClientRect().right > innerWidth).map(el => ({tag:el.tagName,cls:el.getAttribute('class'),right:el.getBoundingClientRect().right,overflow:getComputedStyle(el).overflow})).slice(0,25)}));
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,
-      ),
+      ), JSON.stringify(overflowing),
     ).toBeTruthy();
     const images = await page.locator("img").evaluateAll(async (elements) => {
       elements.forEach((img) => {
@@ -73,7 +74,7 @@ test("navigation, search, FAQ and honest subscription handoff", async ({
   await question.focus();
   await page.keyboard.press("Enter");
   await expect(page.locator(".faq-item")).toHaveAttribute("open", "");
-  await expect(page.locator(".faq-item>p")).toContainText("favorable rates");
+  await expect(page.locator(".faq-answer>p")).toContainText("favorable rates");
   await page
     .getByLabel("Email address", { exact: true })
     .fill("test@example.com");

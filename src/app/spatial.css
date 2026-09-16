@@ -1,0 +1,29 @@
+/* One continuous shipment story: atmosphere → decision → parcel → globe. */
+.journey-thread{position:fixed;z-index:20;right:22px;top:92px;width:9px;height:calc(100vh - 150px);pointer-events:none;mix-blend-mode:multiply}
+.journey-line{position:absolute;left:4px;inset-block:0;width:1px;background:linear-gradient(transparent,#70cab948 20%,#70cab948 80%,transparent)}
+.journey-signal{position:absolute;top:0;left:1px;width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 5px #70cab914,0 0 18px #70cab950;will-change:transform}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:
+ radial-gradient(ellipse at 78% 32%,#70cab922,transparent 42%),
+ radial-gradient(ellipse at 18% 12%,#d9eee76b,transparent 46%),#fff}
+.hero::before{content:"";position:absolute;z-index:-1;inset:-20%;background:
+ radial-gradient(circle at 78% 45%,#70cab91c 0 2%,transparent 16%),
+ linear-gradient(115deg,transparent 42%,#70cab908 52%,transparent 62%);animation:atmosphere-drift 18s var(--ease-in-out) infinite alternate;transform:translate3d(-1%,0,0)}
+.hero-network{perspective:1100px}
+.hero-network .experience-product{transform-style:preserve-3d}
+.hero-network .product-image{background:#ffffffc9;backdrop-filter:blur(10px);box-shadow:0 35px 80px #1e332e1b,0 2px 0 #fff inset}
+.hero-network::after{content:"ORDER · ROUTING";position:absolute;right:7%;top:14%;padding:8px 12px;border:1px solid #70cab93a;border-radius:8px;background:#ffffffb5;backdrop-filter:blur(8px);font-size:9px;letter-spacing:.13em;color:#37675c;animation:signal-float 6s var(--ease-in-out) infinite alternate}
+.shipment-system{position:relative;min-height:520px;isolation:isolate;overflow:hidden;border:1px solid #70cab91f;border-radius:24px;background:radial-gradient(ellipse at 62% 55%,#70cab91a,transparent 50%),#19302a;box-shadow:inset 0 1px #ffffff0c}
+.shipment-atmosphere{position:absolute;inset:0;background:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse,#000,transparent 72%);opacity:.32}
+.shipment-product{position:absolute;z-index:1;left:5%;top:12%;width:68%;transform:perspective(900px) rotateY(7deg) rotateX(2deg)}
+.shipment-product .product-image{padding:7px;border-color:#70cab92c;background:#eff8f4;box-shadow:0 25px 55px #06100d66}
+.parcel-scene{position:absolute;z-index:3;right:-4%;bottom:1%;width:56%;aspect-ratio:1;filter:drop-shadow(0 25px 30px #07120f80)}
+.order-signal,.shipping-decision,.carrier-handoff{position:absolute;z-index:4;border:1px solid #70cab936;border-radius:9px;background:#1e332ed9;backdrop-filter:blur(9px);color:#f5faf8;box-shadow:0 14px 32px #00000024}
+.order-signal{left:2%;bottom:20%;display:flex;align-items:center;gap:8px;padding:9px 12px;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.order-signal i,.carrier-handoff i{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 5px #70cab914}
+.shipping-decision{right:5%;top:10%;padding:11px 14px}.shipping-decision span{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#a9c9bf}.shipping-decision strong{font-size:14px;font-weight:500}
+.carrier-handoff{right:3%;bottom:10%;display:flex;gap:8px;align-items:center;padding:9px 12px;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+@keyframes atmosphere-drift{to{transform:translate3d(3%,1%,0)}}
+@keyframes signal-float{to{transform:translate3d(0,6px,0)}}
+@media(max-width:959px){.journey-thread{display:none}.shipment-system{min-height:430px}.shipment-product{width:74%}.parcel-scene{width:58%}}
+@media(max-width:639px){.hero::before{animation:none}.hero-network::after{display:none}.shipment-system{min-height:380px}.shipment-product{left:4%;top:9%;width:88%;transform:none}.parcel-scene{right:-10%;width:72%;bottom:-3%}.shipping-decision{top:auto;left:5%;right:auto;bottom:8%}.carrier-handoff{display:none}.order-signal{left:auto;right:4%;bottom:auto;top:48%}}
+@media(prefers-reduced-motion:reduce){.hero::before,.hero-network::after{animation:none}.journey-thread{display:none}.shipment-product{transform:none}}

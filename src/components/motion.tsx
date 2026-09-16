@@ -61,6 +61,7 @@ export function CountUp({
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) return;
+    let frame = 0;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -75,28 +76,27 @@ export function CountUp({
           maximumFractionDigits: decimals,
           minimumFractionDigits: decimals,
         });
-        let frame = 0;
 
         const tick = (now: number) => {
           const progress = Math.min((now - startedAt) / duration, 1);
           const eased = 1 - (1 - progress) ** 3;
-          setDisplay(`${prefix}${formatter.format(target * eased)}${suffix}`);
+          setDisplay(progress === 1 ? value : `${prefix}${formatter.format(target * eased)}${suffix}`);
           if (progress < 1) frame = requestAnimationFrame(tick);
         };
 
         frame = requestAnimationFrame(tick);
         observer.unobserve(node);
-        return () => cancelAnimationFrame(frame);
       },
       { threshold: 0.65 },
     );
 
     observer.observe(node);
-    return () => observer.disconnect();
+    return () => { observer.disconnect(); cancelAnimationFrame(frame); };
   }, [target, value]);
 
   return (
-    <span ref={ref} className={className} aria-label={value}>
+    <span ref={ref} className={className}>
+      <span className="sr-only">{value}</span>
       <span aria-hidden="true">{display}</span>
     </span>
   );

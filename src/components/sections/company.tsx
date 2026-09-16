@@ -2,6 +2,7 @@ import { copy as c, news, register, site } from "@/content/site";
 import { Section, Intro, ButtonLink, Eyebrow, Arrow } from "../ui";
 import { Newsletter } from "../newsletter";
 import { RevealOnView } from "../motion";
+import { RouteField } from "../logistics-experience";
 export function Difference() {
   return (
     <Section id="difference">
@@ -55,7 +56,7 @@ export function RecentNews() {
           title="Recent news"
           description="Stay updated with the latest news, updates, and insights from Zineps"
         />
-        <ButtonLink secondary href={`${site}/newsroom`}>
+        <ButtonLink text href={`${site}/newsroom`}>
           View all
         </ButtonLink>
       </div>
@@ -83,6 +84,7 @@ export function FinalConversion() {
   return (
     <Section id="get-started">
       <RevealOnView className="final-banner dark">
+        <div className="route-arrival" aria-hidden="true"><RouteField /></div>
         <h2>{c.finalH}</h2>
         <p className="lead">{c.finalP}</p>
         <div className="actions">
@@ -100,7 +102,7 @@ export function FinalConversion() {
           <article key={key}>
             <h3>{c[`${key}H`]}</h3>
             <p>{c[`${key}P`]}</p>
-            <ButtonLink secondary href={`${site}${url}`}>
+            <ButtonLink text href={`${site}${url}`}>
               {c[`${key}BtnT`]}
             </ButtonLink>
           </article>

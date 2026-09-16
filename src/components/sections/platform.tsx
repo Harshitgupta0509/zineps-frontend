@@ -2,12 +2,16 @@ import { copy as c, integrations, site } from "@/content/site";
 import { asset } from "@/content/images";
 import { Section, Intro, Eyebrow, ProductImage, ButtonLink } from "../ui";
 import { CountUp, RevealOnView } from "../motion";
+import { RouteField } from "../logistics-experience";
+import { GlobalScroll } from "../global-scroll";
+import { JourneyRoute } from "../journey-route";
+import { InteractiveCard } from "../interactive-card";
 export function PlatformBenefits() {
   return (
     <Section id="why-zineps" className="muted">
       <Intro label={c.whyEy} title={c.whyH} />
       <div className="bento">
-        <article className="benefit hub-card">
+        <article className="benefit hub-card"><div className="aceternity-layer hub-static-layout">
           <Eyebrow>{c.hubEy}</Eyebrow>
           <h3>{c.hubH}</h3>
           <p>{c.hubP}</p>
@@ -16,8 +20,8 @@ export function PlatformBenefits() {
             alt="Zineps unified shipping dashboard"
             className="dashboard-crop"
           />
-        </article>
-        <article className="benefit integrations-card">
+        </div></article>
+        <InteractiveCard className="benefit integrations-card">
           <Eyebrow>{c.intEy}</Eyebrow>
           <h3>{c.intH}</h3>
           <p>{c.intP}</p>
@@ -25,8 +29,8 @@ export function PlatformBenefits() {
             file="integrations-mockup.svg"
             alt="Zineps platform, marketplace and WMS integrations"
           />
-        </article>
-        <article className="benefit analytics-card">
+        </InteractiveCard>
+        <InteractiveCard className="benefit analytics-card">
           <Eyebrow>Analytics</Eyebrow>
           <h3>{c.analyticsH}</h3>
           <p>{c.analyticsP}</p>
@@ -48,11 +52,8 @@ export function PlatformBenefits() {
               ))}
             </div>
           </RevealOnView>
-        </article>
-        <article
-          className="benefit global-card dark"
-          data-future-visual="global-coverage"
-        >
+        </InteractiveCard>
+        <InteractiveCard className="benefit global-card dark" variant="border">
           <Eyebrow>{c.globalEy}</Eyebrow>
           <h3>{c.globalH}</h3>
           <p>{c.globalP}</p>
@@ -79,7 +80,7 @@ export function PlatformBenefits() {
           </div>
           <h4>{c.uptimeH}</h4>
           <p className="caption">{c.uptimeP}</p>
-        </article>
+        </InteractiveCard>
       </div>
     </Section>
   );
@@ -93,50 +94,27 @@ export function Integrations() {
           {c.ecoBtnT}
         </ButtonLink>
       </div>
-      <div className="logo-marquee" aria-label="Zineps integrations">
-        <div className="logo-marquee-track">
-          {[false, true].map((duplicate) => (
-            <ul className="logo-grid" aria-hidden={duplicate} key={String(duplicate)}>
-              {integrations.map(([name, file]) => (
-                <li key={`${duplicate}-${name}`}>
-                  <img
-                    src={asset(file).src}
-                    alt={duplicate ? "" : name}
-                    width="120"
-                    height="48"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </li>
-              ))}
-            </ul>
-          ))}
-        </div>
+      <div className="integration-ecosystem" aria-label="Zineps integrations">
+        <div className="ecosystem-core" aria-hidden="true"><RouteField /><img src="/assets/zineps-logo-black.svg" width="118" height="36" alt="" /></div>
+            <div className="ecosystem-logos">
+              {[0, 1, 2].map((row) => {
+                const logos = integrations.slice(row * 6, row * 6 + 6);
+                return <div className={`logo-marquee logo-marquee-${row + 1}`} key={row}>
+                  <div className="logo-track">
+                    {[false, true].map((duplicate) => <ul className="logo-set" aria-hidden={duplicate || undefined} key={String(duplicate)}>
+                      {logos.map(([name, file]) => <li key={name}>
+                        <img src={asset(file).src} alt={duplicate ? "" : name} width="120" height="48" loading="lazy" decoding="async" />
+                      </li>)}
+                    </ul>)}
+                  </div>
+                </div>;
+              })}
+            </div>
       </div>
+      <JourneyRoute network />
     </Section>
   );
 }
 export function GlobalScale() {
-  return (
-    <Section id="global-scale" className="dark">
-      <Intro
-        label={c.globalScaleEy}
-        title={c.globalScaleH}
-        description={c.globalScaleP}
-      />
-      <dl className="scale-grid">
-        {[0, 1, 2].map((i) => (
-          <div key={i}>
-            <dt>{c[`globalScaleD${i}`]}</dt>
-            <dd>
-              <CountUp
-                value={c[`globalScaleN${i}`]}
-                target={[300, 100, 12][i]}
-              />
-            </dd>
-          </div>
-        ))}
-      </dl>
-    </Section>
-  );
+  return <GlobalScroll />;
 }

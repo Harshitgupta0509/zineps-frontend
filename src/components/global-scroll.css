@@ -1,0 +1,56 @@
+#global-scale.global-scroll-section { padding:88px 0 72px;overflow:visible;background:radial-gradient(ellipse at 52% 48%,#244d3b,#0c251b 68%); }
+#global-scale .global-scroll-intro { display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:var(--column-gap,48px); }
+#global-scale .global-scroll-intro h2 { font-size:clamp(36px,3.7vw,54px);line-height:1.13;font-weight:650;max-width:600px; }
+#global-scale .global-scroll-intro .lead { margin:0;font-size:16px;max-width:60ch; }
+#global-scale .global-scroll-intro .eyebrow { margin-bottom:18px; }
+#global-scale .global-scroll-runway { height:225svh;position:relative; }
+#global-scale .global-scroll-sticky { position:sticky;top:80px;height:calc(100svh - 80px);min-height:560px; }
+#global-scale .network-stage { position:relative;height:100%;isolation:isolate;perspective:1400px; }
+#global-scale .network-atmosphere { position:absolute;inset:5% 13%;z-index:-1;background:radial-gradient(ellipse,#76c99c20,transparent 70%);pointer-events:none; }
+#global-scale .network-earth { position:absolute;inset:0;display:grid;place-items:center;pointer-events:none; }
+#global-scale .globe-canvas { transform:none;transition:opacity 300ms ease; }
+#global-scale .network-earth .logistics-globe { width:min(65vw,calc(100svh - 74px),780px);max-width:780px;aspect-ratio:1;height:auto;margin:auto; }
+#global-scale .network-facts { margin:0;position:absolute;inset:0;pointer-events:none; }
+#global-scale .network-fact { position:absolute;padding:22px 26px;border:1px solid #a4d8b94d;border-radius:14px;background:linear-gradient(130deg,#42735a85,#163c2bbb);backdrop-filter:blur(18px);box-shadow:0 20px 54px #04180e3d,inset 0 1px #ffffff1f;max-width:280px; }
+#global-scale .network-fact dt { font-size:12px;color:#c8dfd0;line-height:1.5;margin-bottom:6px; }
+#global-scale .network-fact dd { margin:0;font-family:var(--font-display);font-size:clamp(20px,2.3vw,32px);font-weight:650;color:#f1faed;line-height:1.2;letter-spacing:-.025em; }
+#global-scale .network-fact-0 { left:5%;top:17%; }
+#global-scale .network-fact-1 { right:1%;top:32%;width:236px; }
+#global-scale .network-fact-2 { left:2%;bottom:22%;padding:18px 22px; }
+#global-scale .network-fact-3 { right:9%;bottom:13%;padding:18px 22px; }
+#global-scale .network-fact { pointer-events:auto;transition:translate 200ms ease,border-color 200ms ease,box-shadow 200ms ease; }
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  #global-scale .network-fact:hover { translate:0 -4px;border-color:#bdebd38c;box-shadow:0 26px 58px #04180e52,inset 0 1px #ffffff38; }
+}
+#global-scale .network-fact-2 dd,#global-scale .network-fact-3 dd { font-size:24px; }
+#global-scale .network-results { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;padding-top:32px;border-top:1px solid #a1c8af38; }
+#global-scale .network-results>div { display:flex;flex-direction:column-reverse;gap:14px; }
+#global-scale .network-results dt { color:#cedfd2;font-size:14px;line-height:1.7;max-width:34ch; }
+#global-scale .network-results dd { font-family:var(--font-display);font-size:clamp(30px,3.4vw,50px);font-weight:650;color:#f1faed;line-height:1.15;letter-spacing:-.03em; }
+@media(max-width:959px){
+  #global-scale.global-scroll-section { padding-block:70px; }
+  #global-scale .global-scroll-intro { grid-template-columns:1fr;gap:24px; }
+  #global-scale .global-scroll-runway { height:auto;margin-block:24px 44px; }
+  #global-scale .global-scroll-sticky { position:relative;top:auto;height:auto;min-height:0; }
+  #global-scale .network-stage { display:flex;flex-direction:column;height:auto;perspective:none; }
+  #global-scale .network-earth { position:relative;inset:auto; }
+  #global-scale .network-earth .logistics-globe { width:100%;max-width:620px; }
+  #global-scale .network-facts { position:relative;inset:auto;display:flex;gap:14px;overflow-x:auto;padding:12px 4px 24px;scroll-snap-type:x proximity;pointer-events:auto; }
+  #global-scale .network-fact { position:relative;inset:auto;flex:0 0 210px;max-width:none;width:auto;padding:18px;transform:none;scroll-snap-align:start;backdrop-filter:none; }
+  #global-scale .network-fact dd { font-size:23px; }
+  #global-scale .network-results { gap:24px; }
+}
+@media(max-width:639px){
+  #global-scale .network-results { grid-template-columns:1fr;gap:30px; }
+  #global-scale .network-results dt { max-width:100%; }
+  #global-scale .network-fact { flex-basis:70%; }
+  #global-scale .global-scroll-intro h2 { font-size:36px; }
+}
+@media(prefers-reduced-motion:reduce){
+  #global-scale .global-scroll-runway { height:auto; }
+  #global-scale .global-scroll-sticky { position:relative;top:auto;height:700px;min-height:0; }
+  #global-scale .network-fact { transform:none; }
+}
+@media(prefers-reduced-motion:reduce) and (max-width:959px){
+  #global-scale .global-scroll-sticky { height:auto; }
+}

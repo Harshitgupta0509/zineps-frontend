@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Faq } from "@/components/faq";
+import { ExperienceDirector } from "@/components/experience-director";
 import {
   Hero,
   PartnerRates,
@@ -23,7 +24,7 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <main id="main-content" tabIndex={-1}>
+      <ExperienceDirector>
         <Hero />
         <PartnerRates />
         <ShippingSolutions />
@@ -37,7 +38,7 @@ export default function Home() {
         <NetworkBridge />
         <RecentNews />
         <FinalConversion />
-      </main>
+      </ExperienceDirector>
       <Footer />
     </>
   );

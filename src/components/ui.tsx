@@ -20,13 +20,15 @@ export function ButtonLink({
   href,
   children,
   secondary = false,
+  text = false,
 }: {
   href: string;
   children: ReactNode;
   secondary?: boolean;
+  text?: boolean;
 }) {
   return (
-    <a className={`button ${secondary ? "button-secondary" : ""}`} href={href}>
+    <a className={`button ${text ? "button-text" : secondary ? "button-secondary" : "button-primary"}`} href={href}>
       {children}
       <Arrow />
     </a>

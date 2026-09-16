@@ -37,10 +37,9 @@ export function Faq() {
           {filtered.map((item) => (
             <details name="faq" key={item.id} className="faq-item">
               <summary>
-                <span className="faq-number">0{item.id + 1}</span>
                 <h3>{item.question}</h3>
                 <span className="faq-icon" aria-hidden="true">
-                  +
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 8h10M8 3v10" /></svg>
                 </span>
               </summary>
               <div className="faq-answer">

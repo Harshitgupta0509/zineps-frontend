@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import "@fontsource-variable/geist";
+import "@fontsource-variable/manrope";
 import "./globals.css";
+import "./experience.css";
+import "./globe.css";
+import "./editorial.css";
+import "./premium.css";
+import "./responsive.css";
 export const metadata: Metadata = {
   title: "AI Shipping Software for e-commerce & Logistics | Zineps",
   description:

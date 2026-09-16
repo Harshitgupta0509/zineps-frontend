@@ -4,5 +4,11 @@ out/
 *.tsbuildinfo
 test-results/
 playwright-report/
+.claude/
+.codex/
+.cursor/
+.impeccable/
+.sites-build-staging/
+.openai/
 .env*
 !.env.example
